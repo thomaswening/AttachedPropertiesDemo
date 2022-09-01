@@ -1,0 +1,36 @@
+﻿<Window x:Class="AttachedPropertiesDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AttachedPropertiesDemo"
+        xmlns:ext="clr-namespace:AttachedPropertiesDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="100" Width="600" FontSize="25">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <!--Since referencing the namespace "local" never works for some reason,
+        declare another one identical, e.g. ext and then reference the property
+        as below: {namespace}:{class}.{identifier}-->
+        <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" 
+                 Text="Name" MinWidth="200" Margin="5" 
+                 GotFocus="TextBox_GotFocus"
+                 ext:TextBoxExtension.WasUsed="false"/>
+        
+        <Button x:Name="btn" Grid.Row="1" Grid.Column="2" Content="OK" Margin="5" Click="btn_Click"/>
+        <TextBlock x:Name="txtMessage" Grid.Row="1" Grid.Column="3" Margin="5"/>
+    </Grid>
+</Window>
