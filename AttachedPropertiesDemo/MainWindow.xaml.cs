@@ -40,5 +40,10 @@ namespace AttachedPropertiesDemo
                 txtMessage.Text += $" {TextBoxExtension.GetWasUsed(txtName)}"; // The hell it can!
             }
         }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) btn_Click(sender, e);
+        }
     }
 }

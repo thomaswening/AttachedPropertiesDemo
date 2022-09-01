@@ -28,7 +28,7 @@
         <TextBox x:Name="txtName" Grid.Row="1" Grid.Column="1" 
                  Text="Name" MinWidth="200" Margin="5" 
                  GotFocus="TextBox_GotFocus"
-                 ext:TextBoxExtension.WasUsed="false"/>
+                 ext:TextBoxExtension.WasUsed="false" KeyDown="txtName_KeyDown"/>
         
         <Button x:Name="btn" Grid.Row="1" Grid.Column="2" Content="OK" Margin="5" Click="btn_Click"/>
         <TextBlock x:Name="txtMessage" Grid.Row="1" Grid.Column="3" Margin="5"/>
